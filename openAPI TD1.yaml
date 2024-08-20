@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: STD23014
+  description: This is my answer of the TP1
+  version: 1.0.0
+servers:
+  - url: https://localhost.STD23014.com
+paths:
+  /customers:
+    get:
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: Array
+                item: Customer
+                $ref: '#/components/schemas/Customer'
+
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+          name:
+            type: string
+          age:
+            type: integer
